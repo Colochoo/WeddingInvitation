@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './index.css';
+import Header from './components/Header';
+
+function Wedding() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="Wedding">
+      <Header></Header>
+      <main>
+        <div class="container">
+          <h1 class="h1head">Wedding Invitation</h1>
+            <div class="ps">
+              <p>We are excited to invite you to our wedding!</p>
+              <p>Date: 25th December 2023</p>
+              <p>Venue: The Grand Hall, City Center</p>
+              <p>Time: 5:00 PM</p>
+              <p>Please RSVP by 1st December 2023</p>
+              <p>We look forward to celebrating with you!</p>
+            </div>
+        </div>
+      </main>
     </div>
   );
 }
 
-export default App;
+export default Wedding;

@@ -1,13 +1,215 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wdth,wght@0,100..125,600;1,100..125,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,700&family=Sour+Gummy:ital,wdth,wght@0,100..125,600;1,100..125,600&display=swap');
+
+/*-------------------------------------------------------------------------------------------------------
+--------------------------------Overall Setup-----------------------------------------------------------
+-------------------------------------------------------------------------------------------------------*/
+html {
+  /* Font size 16px = 1rem */
+  font-size: 62.5%;
+}
+
+a { /* Remove underline and weird colors from links */
+  text-decoration: none;
+  color: inherit;
+  letter-spacing: 0.5px;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+body { 
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Nunito';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*-------------------------------------------------------------------------------------------------------
+--------------------------------Header styles------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------*/
+.Wedding-header {
+  position: relative;
+  height: 100vh;;
+  overflow: hidden;
+  width: 100%;
+  z-index: 0;
+  /*min-height: 36vh;  36vh = 36% of the viewport height */
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  align-items: center;
+}
+
+/*//////////////// Top-infor Header\\\\\\\\\\\\\\\\*/
+.top-info {
+  font-size: 1.1rem; 
+  color: #fff;
+  font-family: 'Sour Gummy';
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.top-info-left span {
+  margin-right: 1rem;
+}
+
+.top-info-left {
+  padding: 0rem 7vw;
+}
+
+.top-info-right {
+  padding: 0rem 7vw;
+}
+
+/*//////////////// Nav-Menu List Header\\\\\\\\\\\\\\\\*/
+.nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 0rem 0rem 0rem;
+  z-index: 10;
+  gap: 10px;
+}
+
+.nav-left {
+  padding: 0rem 0rem 0rem 0rem;
+  z-index: 3;
+  left: 50%;
+  transform: translateX(-40%);
+}
+
+.nav-right {
+  padding: 0rem 0rem 0rem 0rem;
+  z-index: 3;
+  right: 50%;
+  transform: translateX(40%);
+}
+
+.logo {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 3.75rem;
+}
+
+.logo img {
+  width: 16rem;
+}
+
+.nav ul {
+  font-family: 'Sour Gummy';
+  display: flex;
+  gap: 1rem;
+  font-weight: 500;
+  font-size: 1.2rem; 
+  list-style: none;
+}
+
+/*//////////////// Banner Title Header \\\\\\\\\\\\\\\\*/
+.banner-title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-49%);
+}
+
+svg path {
+    min-height: 50vh; /* 50vh = 50% of the viewport height */
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 0.4;
+    stroke-dasharray: 60;
+    stroke-dashoffset: 60;
+    animation: textAnimation 3s ease-in-out forwards;
+}
+
+/* Sombre para objeto svg (letras) */
+.banner-title svg {
+  filter: drop-shadow(3px 5px 7px rgba(0, 0, 0, 0.5));
+}
+
+/* Animacion de aparicion para objeto svg (letras) */
+@keyframes textAnimation {
+    0% {
+      stroke-dashoffset: 60;
+    }
+    60% {
+      fill: transparent;
+      stroke-width: 0.1;
+    }
+    100% {
+      fill: #fff;
+      stroke-width: 0;
+      stroke-dashoffset: 0;
+    }
+}
+
+/*//////////////// Video BC Header\\\\\\\\\\\\\\\\*/
+.banner-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 75vh; /* define how much tall/height needs BC to be */
+  flex-direction: column;
+  z-index: 1;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.video-loop {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+
+
+/*-------------------------------------------------------------------------------------------------------
+--------------------------------Media Querie------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------*/
+/* Large Screen (<1500px) */
+@media (max-width: 93.75rem) {
+  /* 1500px / 16px = 93.75*/
+
+  html {
+    font-size: 87.5%;
+  }
+
+  /* Auto Sizing to Device Screen*/
+  svg {
+    width: 70%;
+    height: 70%;
+  }
+}
+
+/* Mid Screen (<1000px) */
+@media (max-width: 62.5rem) {
+  /* 1000px / 16px = 62.5*/
+  
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Small Screen (<500px) */
+@media (max-width: 31.25rem) {
+  /* 500px / 16px = 31.25*/
+  html {
+    font-size: 30%;
+  }
 }
